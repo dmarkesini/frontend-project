@@ -37,21 +37,6 @@
 .articles_header-container {
   border: 2px solid rgb(14, 2, 48);
   text-align: center;
-
-  display: grid;
-  grid-template-columns: 15fr 1fr 5fr;
-
-  grid-template-areas: "title button .";
-}
-
-.articles_title {
-  grid-area: title;
-}
-
-.articles_show-all-articles-button {
-  grid-area: button;
-  /* margin-right: 200px; */
-  padding: 20px;
 }
 
 .articles_article-display {
