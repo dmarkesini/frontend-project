@@ -1,5 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import codingImage from "../images/coding.jpg"
+import codingImage from "../images/coding.png";
+import cookingImage from "../images/cooking.png";
+import footballImage from "../images/football.png";
 
 const ArticleDisplay = ({ article }) => {
   const navigate = useNavigate();
@@ -13,11 +15,11 @@ const ArticleDisplay = ({ article }) => {
       onClick={() => navigateToArticleById(article.article_id)}
     >
       {article.topic === "coding" ? (
-        <img src={codingImage} />
+        <img className="topic-image" src={codingImage} alt="coding" />
       ) : article.topic === "cooking" ? (
-        <img src={codingImage} />
+        <img className="topic-image" src={cookingImage} alt="cooking" />
       ) : (
-        <img src={codingImage} />
+        <img className="topic-image" src={footballImage} alt="football" />
       )}
       <div className="articles_text-container">
         <p className="articles_single-title">{article.title}</p>

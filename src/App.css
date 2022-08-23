@@ -1,15 +1,15 @@
 .header {
   text-align: center;
-  background-color: #282c34;
+  background-color: rgb(3, 75, 75);
   height: 150;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  /* display: block; */
-  /* display: grid;
+  display: block;
+  display: grid;
   grid-template-columns: 10fr 250px;
-  grid-template-areas: "title userinterface"; */
+  grid-template-areas: "title userinterface";
 }
 
 .title {
@@ -20,8 +20,8 @@
 }
 
 .user-interface {
-  border: 3px solid rgb(14, 2, 48);
-  background-color: white;
+  border: 3px solid rgb(8, 78, 60);
+  background-color: rgb(66, 148, 148);
 
   grid-area: userinterface;
   display: grid;
@@ -34,14 +34,14 @@
 }
 
 .username {
-  color: black;
+  color: white;
   grid-area: username;
   padding-top: 20px;
   font-weight: 400;
 }
 
 .avatar {
-  border: 3px solid rgb(255, 255, 255);
+  /* border: 3px solid rgb(255, 255, 255); */
   grid-area: avatar;
   height: 90px;
   padding: 5px;
@@ -95,7 +95,7 @@
   padding: 35px;
   margin: auto;
   color: #282c34;
-  background-color: rgb(235, 232, 232);
+  background-color: rgb(217, 235, 231);
   width: 40%;
 }
 .articles_single-page-article-container:hover {
@@ -105,14 +105,22 @@
 
 #single-page_title {
   text-align: center;
+  margin: 0;
 }
 #single-page_topic {
   font-weight: 700px;
   text-align: center;
+  text-decoration: none;
+  border: rgb(5, 112, 112) solid 2px;
+  background-color: teal;
+  border-radius: 10px;
+  padding: 4px;
+  color: white;
 }
-#single-page_author {
-  font-weight: 700px;
-  text-align: center;
+
+#single-page_topic:hover {
+  opacity: 0.8;
+  box-shadow: 0 0 6px rgb(35 173 255);
 }
 
 #single-page_body {
@@ -122,8 +130,8 @@
 
 #single-page_posted {
   font-weight: 700px;
-  text-align: left;
- 
+  text-align: center;
+  margin-right: 5px;
 }
 #single-page_votes {
   font-weight: 700px;
@@ -134,20 +142,55 @@
   text-align: center;
 }
 
-.articles-container_author-posted {
-
+.articles-container_author-posted-topic {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
-.articles-container_votes-comments {
+.articles-container_votes-buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#vote-button {
+  margin-left: 20px;
+  margin-right: 20px;
+  font-weight: 700px;
+  text-align: center;
+  text-decoration: none;
+  /* border: rgb(87, 3, 3) solid 2px;
   
+  /* background-color: rgb(255, 80, 10); */
+  background-color: rgb(214, 63, 57);
+  border: none;
+  border-radius: 5px;
+  padding: 4px;
+  color: white;
+  box-shadow: 0 0 6px rgb(35 173 255);
+  cursor: pointer;
+}
+#vote-button:hover {
+  opacity: 0.8;
+  box-shadow: 0 0 6px rgb(35 173 255);
+}
+
+.topic-image-single-page {
+  max-width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .topic-image {
   margin: auto;
+  max-width: 65%;
 }
 
 .topics-container {
-  border: solid 2px black;
+  border: solid 2px teal;
+  border-radius: 5px;
   padding: 25px;
   padding-left: 25px;
   display: flex;
@@ -168,14 +211,14 @@
 
 @media screen and (min-width: 922px) {
   .header {
-    background-color: #282c34;
+    background-color: rgb(3, 75, 75);
     display: grid;
     grid-template-columns: 1fr 3fr 300px;
     grid-template-areas: "title . userinterface";
   }
 
   .user-interface {
-    border: 3px solid black;
+    border: 3px solid rgb(4, 65, 59);
     grid-area: userinterface;
     display: grid;
     grid-template-columns: 1fr 1fr;
