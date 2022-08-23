@@ -1,6 +1,7 @@
 import { fetchArticles } from "../api";
 import { useState, useEffect } from "react";
 import ArticleDisplay from "./ArticleDisplay";
+import TopicTitle from "./TopicTitle";
 
 const Articles = () => {
   const [articles, setArticles] = useState([]);
@@ -13,11 +14,7 @@ const Articles = () => {
 
   return (
     <>
-      <div className="articles_header-container">
-        <h1 className="articles_title">Popular articles</h1>
-
-        <button className="articles_show-all-articles-button">Show all articles</button>
-      </div>
+      <TopicTitle title={"Read all the best articles"} />
       <div className="articles_article-display">
         {articles.map((article) => {
           return <ArticleDisplay article={article} key={article.article_id} />;

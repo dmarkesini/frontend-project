@@ -37,29 +37,15 @@
 .articles_header-container {
   border: 2px solid rgb(14, 2, 48);
   text-align: center;
-
-  display: grid;
-  grid-template-columns: 15fr 1fr 5fr;
-
-  grid-template-areas: "title button .";
-}
-
-.articles_title {
-  grid-area: title;
-}
-
-.articles_show-all-articles-button {
-  grid-area: button;
-  /* margin-right: 200px; */
-  padding: 20px;
+  text-transform: capitalize;
 }
 
 .articles_article-display {
   border: solid 2px black;
   grid-area: article;
   display: grid;
-  grid-template-columns: 4fr 4fr 4fr;
-  grid-template-areas: "article article article";
+  grid-template-columns: 1fr;
+  grid-template-areas: "article";
   padding: 25px;
 }
 
@@ -121,5 +107,14 @@
 
   .topic-4 {
     padding-right: 175px;
+  }
+
+  .articles_article-display {
+    border: solid 2px black;
+    grid-area: article;
+    display: grid;
+    grid-template-columns: 4fr 4fr 4fr;
+    grid-template-areas: "article article article";
+    padding: 25px;
   }
 }
