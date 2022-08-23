@@ -1,13 +1,22 @@
 import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
+import Topics from "./components/Topics";
 import Articles from "./components/Articles";
+import ArticlesByTopic from "./components/ArticlesByTopic";
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <Articles />
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Header />
+        <Topics />
+        <Routes>
+          <Route path="/articles" element={<ArticlesByTopic />} />
+          <Route path="/" element={<Articles />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 

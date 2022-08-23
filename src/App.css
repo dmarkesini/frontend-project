@@ -37,6 +37,7 @@
 .articles_header-container {
   border: 2px solid rgb(14, 2, 48);
   text-align: center;
+  text-transform: capitalize;
 }
 
 .articles_article-display {
@@ -58,6 +59,14 @@
   padding: 5px;
   margin: 7px;
   box-shadow: 5px 5px 5px lightblue;
+}
+
+.topics-container {
+  border: solid 2px black;
+  padding: 25px;
+  padding-left: 25px;
+  display: flex;
+  justify-content: space-around;
 }
 
 @media screen and (min-width: 922px) {
@@ -90,6 +99,14 @@
     border: 1px solid white;
     height: 130px;
     padding: 5px;
+  }
+
+  .topic-1 {
+    padding-left: 175px;
+  }
+
+  .topic-4 {
+    padding-right: 175px;
   }
 
   .articles_article-display {

@@ -14,7 +14,7 @@ const Articles = () => {
 
   return (
     <>
-      <TopicTitle title={"Read all the best"} />
+      <TopicTitle title={"Read all the best articles"} />
       <div className="articles_article-display">
         {articles.map((article) => {
           return <ArticleDisplay article={article} key={article.article_id} />;
