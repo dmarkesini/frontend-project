@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { fetchArticleById } from "../api";
+import codingImage from "../images/coding.jpg";
 
 const SingleArticlePage = () => {
   const { article_id } = useParams();
@@ -16,14 +17,31 @@ const SingleArticlePage = () => {
     <>
       {article && (
         <div className="articles_single-page-article-container">
-          <h1 id="single-page_title">{article.article.title}</h1>
-          <p id="single-page_topic">Topic: {article.article.topic}</p>
-          <p id="single-page_author">Author: {article.article.author}</p>
+          {article.article.topic === "coding" ? (
+            <img className="topic-image" src={codingImage} />
+          ) : article.article.topic === "cooking" ? (
+            <img className="topic-image" src={codingImage} />
+          ) : (
+            <img className="topic-image" src={codingImage} />
+          )}
+          <h1 id="single-page_title">
+            {article.article.title}{" "}
+            <h6 id="single-page_topic"> #in {article.article.topic}</h6>
+          </h1>
+          <div className="articles-container_author-posted">
+            <p id="single-page_author">Author: {article.article.author}</p>
+            <p id="single-page_posted">
+              Posted at: {article.article.created_at}
+            </p>
+          </div>
           <p id="single-page_body">{article.article.body}</p>
-          <p id="single-page_created">Posted at: {article.article.created_at}</p>
-          <p id="single-page_votes">Votes: {article.article.votes}</p>
-          <p id="single-page_comment">Comments: {article.article.comment_count}</p>
-        </div>
+          <div className="articles-container_votes-comments">
+            <p id="single-page_votes">Votes: {article.article.votes}</p>
+            <p id="single-page_comment">
+              Comments: {article.article.comment_count}
+            </p>
+          </div>
+          </div>
       )}
     </>
   );
