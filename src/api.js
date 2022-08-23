@@ -19,5 +19,13 @@ export const fetchTopics = () => {
 };
 
 export const fetchArticlesByTopic = (topic) => {
-  return axios.get(`https://social-interactive-project.herokuapp.com/api/articles?topic=${topic}`)
-}
+  return axios.get(
+    `https://social-interactive-project.herokuapp.com/api/articles?topic=${topic}`
+  );
+};
+
+export const fetchArticleById = (article_id) => {
+  return axios
+    .get(`https://social-interactive-project.herokuapp.com/api/articles/${article_id}`)
+    .then((body) => body);
+};
