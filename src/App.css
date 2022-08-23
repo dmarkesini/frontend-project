@@ -1,38 +1,103 @@
-.App {
+.header {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
   background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  display: grid;
+  grid-template-columns: 1fr 4fr 250px;
+  grid-template-areas: "title title userinterface";
+}
+
+.user-interface {
+  border: 3px solid rgb(14, 2, 48);
+  background-color: white;
+
+  grid-area: userinterface;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "avatar username"
+    "avatar username";
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.username {
+  color: black;
+  grid-area: username;
+  padding-top: 20px;
+  font-weight: 400;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.avatar {
+  border: 3px solid rgb(255, 255, 255);
+  grid-area: avatar;
+  height: 90px;
+  padding: 5px;
+}
+
+.articles_header-container {
+  border: 2px solid rgb(14, 2, 48);
+  text-align: center;
+}
+
+.articles_article-display {
+  border: solid 2px black;
+  grid-area: article;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "article";
+  padding: 25px;
+}
+
+.articles_single-title {
+  font-weight: bold;
+}
+
+.articles_single-article {
+  border: solid 1px rgb(70, 36, 36);
+  border-radius: 5px;
+  padding: 5px;
+  margin: 7px;
+  box-shadow: 5px 5px 5px lightblue;
+}
+
+@media screen and (min-width: 922px) {
+  .header {
+    background-color: #282c34;
+    display: grid;
+    grid-template-columns: 1fr 3fr 300px;
+    grid-template-areas: "title . userinterface";
   }
-  to {
-    transform: rotate(360deg);
+
+  .user-interface {
+    border: 3px solid black;
+    grid-area: userinterface;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      "avatar username"
+      "avatar username";
+    color: white;
+  }
+
+  .username {
+    grid-area: username;
+    padding-top: 20px;
+    font-weight: 600;
+  }
+
+  .avatar {
+    border: 1px solid white;
+    height: 130px;
+    padding: 5px;
+  }
+
+  .articles_article-display {
+    border: solid 2px black;
+    grid-area: article;
+    display: grid;
+    grid-template-columns: 4fr 4fr 4fr;
+    grid-template-areas: "article article article";
+    padding: 25px;
   }
 }
