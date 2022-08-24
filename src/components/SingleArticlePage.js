@@ -5,6 +5,7 @@ import codingImage from "../images/coding.png";
 import cookingImage from "../images/cooking.png";
 import footballImage from "../images/football.png";
 import Votes from "./Votes";
+import Comments from "./Comments";
 
 const SingleArticlePage = () => {
   const { article_id } = useParams();
@@ -20,47 +21,51 @@ const SingleArticlePage = () => {
   return (
     <>
       {article && (
-        <div className="articles_single-page-article-container">
-          <h1 id="single-page_title">{article.title}</h1>
-          <div className="articles-container_author-posted-topic">
-            <p id="single-page_posted">
-              Posted at: {article.created_at.slice(0, 10)} by{" "}
-              {article.author} in
-            </p>
-            <Link
-              to={`/articles?topic=${article.topic}`}
-              id="single-page_topic"
-            >
-              {" "}
-              #{article.topic}
-            </Link>
+        <div>
+          <div className="articles_single-page-article-container">
+            <h1 id="single-page_title">{article.title}</h1>
+            <div className="articles-container_author-posted-topic">
+              <p id="single-page_posted">
+                Posted at: {article.created_at.slice(0, 10)} by {article.author}{" "}
+                in
+              </p>
+              <Link
+                to={`/articles?topic=${article.topic}`}
+                id="single-page_topic"
+              >
+                {" "}
+                #{article.topic}
+              </Link>
+            </div>
+            {article.topic === "coding" ? (
+              <img
+                className="topic-image-single-page"
+                src={codingImage}
+                alt="coding"
+              />
+            ) : article.topic === "cooking" ? (
+              <img
+                className="topic-image-single-page"
+                src={cookingImage}
+                alt="cooking"
+              />
+            ) : (
+              <img
+                className="topic-image-single-page"
+                src={footballImage}
+                alt="football"
+              />
+            )}
+
+            <p id="single-page_body">{article.body}</p>
+
+            <Votes article={article} />
           </div>
-          {article.topic === "coding" ? (
-            <img
-              className="topic-image-single-page"
-              src={codingImage}
-              alt="coding"
-            />
-          ) : article.topic === "cooking" ? (
-            <img
-              className="topic-image-single-page"
-              src={cookingImage}
-              alt="cooking"
-            />
-          ) : (
-            <img
-              className="topic-image-single-page"
-              src={footballImage}
-              alt="football"
-            />
-          )}
 
-          <p id="single-page_body">{article.body}</p>
-
-          <Votes article={article} />
-          <p id="single-page_comment">
-            Comments: {article.comment_count}
-          </p>
+          <div className="articles_single-page-comments-section">
+            <p id="single-page_comment">{article.comment_count} Comments</p>
+            <Comments article_id={article.article_id} />
+          </div>
         </div>
       )}
     </>
