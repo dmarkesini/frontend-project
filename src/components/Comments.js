@@ -13,7 +13,7 @@ const Comments = ({ article_id }) => {
 
   return (
     <div>
-      <PostComment />
+      <PostComment article_id={article_id} />
       {comments.map((comment) => {
         return (
           <div key={comment.comment_id}>

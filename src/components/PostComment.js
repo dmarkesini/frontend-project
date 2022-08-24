@@ -1,6 +1,7 @@
 import { useState } from "react";
+import { postCommentById } from "../api";
 
-const PostComment = ({ setComments }) => {
+const PostComment = ({ article_id }) => {
   const [commentInput, setCommentInput] = useState("");
 
   const handlePostRequest = (event) => {
@@ -8,18 +9,19 @@ const PostComment = ({ setComments }) => {
   };
 
   const handleSubmit = (event) => {
-    event.PreventDefault();
-
-    setComments((currComments) => {
-      return [...currComments, { comment: commentInput }];
+    event.preventDefault();
+    postCommentById(article_id, {
+      username: "weegembump",
+      body: commentInput,
+    }).then(() => {
+      setCommentInput("");
     });
-    setCommentInput("");
   };
 
   return (
     <div>
       <p>What are your thoughts?</p>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={(event) => handleSubmit(event)}>
         <input
           onChange={handlePostRequest}
           id="comment-input"
