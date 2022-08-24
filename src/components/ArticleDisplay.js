@@ -28,6 +28,9 @@ const ArticleDisplay = ({ article }) => {
         <p className="articles_single-comments">
           Comments: {article.comment_count}
         </p>
+        <p className="articles_single-comments">
+          posted at {article.created_at.slice(0, 10)}
+        </p>
       </div>
     </div>
   );

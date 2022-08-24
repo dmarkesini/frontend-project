@@ -8,7 +8,7 @@ const Comments = ({ article_id }) => {
     fetchCommentsById(article_id).then(({ data }) => {
       setComments(data);
     });
-  }, [comments]);
+  }, [comments, article_id]);
 
   return (
     <div>
