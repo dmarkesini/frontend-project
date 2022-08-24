@@ -12,7 +12,8 @@ const SingleArticlePage = () => {
 
   useEffect(() => {
     fetchArticleById(article_id).then(({ data }) => {
-      setArticle(data);
+      const { article } = data;
+      setArticle(article);
     });
   }, [article]);
 
@@ -20,27 +21,27 @@ const SingleArticlePage = () => {
     <>
       {article && (
         <div className="articles_single-page-article-container">
-          <h1 id="single-page_title">{article.article.title}</h1>
+          <h1 id="single-page_title">{article.title}</h1>
           <div className="articles-container_author-posted-topic">
             <p id="single-page_posted">
-              Posted at: {article.article.created_at.slice(0, 10)} by{" "}
-              {article.article.author} in
+              Posted at: {article.created_at.slice(0, 10)} by{" "}
+              {article.author} in
             </p>
             <Link
-              to={`/articles?topic=${article.article.topic}`}
+              to={`/articles?topic=${article.topic}`}
               id="single-page_topic"
             >
               {" "}
-              #{article.article.topic}
+              #{article.topic}
             </Link>
           </div>
-          {article.article.topic === "coding" ? (
+          {article.topic === "coding" ? (
             <img
               className="topic-image-single-page"
               src={codingImage}
               alt="coding"
             />
-          ) : article.article.topic === "cooking" ? (
+          ) : article.topic === "cooking" ? (
             <img
               className="topic-image-single-page"
               src={cookingImage}
@@ -54,11 +55,11 @@ const SingleArticlePage = () => {
             />
           )}
 
-          <p id="single-page_body">{article.article.body}</p>
+          <p id="single-page_body">{article.body}</p>
 
           <Votes article={article} />
           <p id="single-page_comment">
-            Comments: {article.article.comment_count}
+            Comments: {article.comment_count}
           </p>
         </div>
       )}

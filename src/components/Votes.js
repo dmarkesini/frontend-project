@@ -9,7 +9,7 @@ const Votes = ({ article }) => {
   const [errorMessage, setErrorMessage] = useState("");
 
   const vote = (voteValue) => {
-    patchArticleById(article.article.article_id, voteValue).catch((err) => {
+    patchArticleById(article.article_id, voteValue).catch((err) => {
       setError(true);
       setErrorMessage(err.message);
     });
@@ -26,7 +26,7 @@ const Votes = ({ article }) => {
         <ErrorPage errorMessage={errorMessage} />
       ) : (
         <div className="articles-container_votes-buttons">
-          <p id="single-page_votes">Votes: {article.article.votes}</p>
+          <p id="single-page_votes">Votes: {article.votes}</p>
           <button
             disabled={upVote}
             onClick={() => vote(+1)}
