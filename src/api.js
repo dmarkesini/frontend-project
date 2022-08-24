@@ -30,6 +30,12 @@ export const fetchArticleById = (article_id) => {
     .then((body) => body);
 };
 
+export const fetchCommentsById = (article_id) => {
+  return axios
+    .get(`https://social-interactive-project.herokuapp.com/api/articles/${article_id}/comments`)
+    .then((body) => body);
+}
+
 export const patchArticleById = (article_id, vote) => {
   return axios
     .patch(
