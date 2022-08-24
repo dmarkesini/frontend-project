@@ -29,3 +29,9 @@ export const fetchArticleById = (article_id) => {
     .get(`https://social-interactive-project.herokuapp.com/api/articles/${article_id}`)
     .then((body) => body);
 };
+
+export const patchArticleById = (article_id, vote) => {
+  return axios
+    .patch(
+      `https://social-interactive-project.herokuapp.com/api/articles/${article_id}`, {inc_votes: vote})
+}

@@ -1,7 +1,10 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { fetchArticleById } from "../api";
-import codingImage from "../images/coding.jpg";
+import codingImage from "../images/coding.png";
+import cookingImage from "../images/cooking.png";
+import footballImage from "../images/football.png";
+import Votes from "./Votes";
 
 const SingleArticlePage = () => {
   const { article_id } = useParams();
@@ -9,7 +12,8 @@ const SingleArticlePage = () => {
 
   useEffect(() => {
     fetchArticleById(article_id).then(({ data }) => {
-      setArticle(data);
+      const { article } = data;
+      setArticle(article);
     });
   }, [article]);
 
@@ -17,31 +21,47 @@ const SingleArticlePage = () => {
     <>
       {article && (
         <div className="articles_single-page-article-container">
-          {article.article.topic === "coding" ? (
-            <img className="topic-image" src={codingImage} />
-          ) : article.article.topic === "cooking" ? (
-            <img className="topic-image" src={codingImage} />
-          ) : (
-            <img className="topic-image" src={codingImage} />
-          )}
-          <h1 id="single-page_title">
-            {article.article.title}{" "}
-            <h6 id="single-page_topic"> #in {article.article.topic}</h6>
-          </h1>
-          <div className="articles-container_author-posted">
-            <p id="single-page_author">Author: {article.article.author}</p>
+          <h1 id="single-page_title">{article.title}</h1>
+          <div className="articles-container_author-posted-topic">
             <p id="single-page_posted">
-              Posted at: {article.article.created_at}
+              Posted at: {article.created_at.slice(0, 10)} by{" "}
+              {article.author} in
             </p>
+            <Link
+              to={`/articles?topic=${article.topic}`}
+              id="single-page_topic"
+            >
+              {" "}
+              #{article.topic}
+            </Link>
           </div>
-          <p id="single-page_body">{article.article.body}</p>
-          <div className="articles-container_votes-comments">
-            <p id="single-page_votes">Votes: {article.article.votes}</p>
-            <p id="single-page_comment">
-              Comments: {article.article.comment_count}
-            </p>
-          </div>
-          </div>
+          {article.topic === "coding" ? (
+            <img
+              className="topic-image-single-page"
+              src={codingImage}
+              alt="coding"
+            />
+          ) : article.topic === "cooking" ? (
+            <img
+              className="topic-image-single-page"
+              src={cookingImage}
+              alt="cooking"
+            />
+          ) : (
+            <img
+              className="topic-image-single-page"
+              src={footballImage}
+              alt="football"
+            />
+          )}
+
+          <p id="single-page_body">{article.body}</p>
+
+          <Votes article={article} />
+          <p id="single-page_comment">
+            Comments: {article.comment_count}
+          </p>
+        </div>
       )}
     </>
   );
