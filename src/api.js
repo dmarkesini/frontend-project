@@ -24,11 +24,7 @@ export const fetchTopics = () => {
     .then((body) => body);
 };
 
-export const fetchArticlesByTopic = (
-  topic,
-  sortByQuery,
-  orderQuery = "DESC"
-) => {
+export const fetchArticlesByTopic = (topic, sortByQuery, orderQuery = "DESC") => {
   let endpoint = `https://social-interactive-project.herokuapp.com/api/articles?topic=${topic}`;
 
   if (sortByQuery) {
@@ -57,7 +53,14 @@ export const patchArticleById = (article_id, vote) => {
 
 
 export const postCommentById = (article_id, comment) => {
-  return axios.post(
+  return axios
+    .post(
     `https://social-interactive-project.herokuapp.com/api/articles/${article_id}/comments`, comment)
 
+}
+
+export const deleteCommentById = (comment_id) => {
+  return axios
+    .delete(
+    `https://social-interactive-project.herokuapp.com/api/comments/${comment_id}`);
 }
