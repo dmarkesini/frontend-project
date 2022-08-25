@@ -172,6 +172,28 @@
   font-weight: 700;
 }
 
+#comments_button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.comments_submit-button {
+  font-weight: 700px;
+  text-align: center;
+  text-decoration: none;
+  border: rgb(5, 112, 112) solid 2px;
+  background-color: teal;
+  border-radius: 10px;
+  padding: 4px;
+  color: white;
+  margin: 15px;
+}
+
+.comments_submit-button:hover {
+  opacity: 0.8;
+  box-shadow: 0 0 6px rgb(35 173 255);
+}
+
 #comments_body {
   padding: 20px;
   border: solid 1px rgb(133, 199, 193);
@@ -345,6 +367,6 @@
   }
 
   #comment-input {
-    width: 50%;
+    width: 100%;
   }
 }

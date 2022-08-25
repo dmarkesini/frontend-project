@@ -7,7 +7,7 @@ const PostComment = ({ article_id }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [posted, setPosted] = useState(false);
 
-  const handlePostRequest = (event) => {
+  const handlePostChange = (event) => {
     setCommentInput(event.target.value);
   };
 
@@ -25,22 +25,23 @@ const PostComment = ({ article_id }) => {
   };
 
   return (
-    <div>
+    <div className="comments_post-comment-container">
       {isLoading && <Loading />}
       {posted && <p className="comments_posted-message">Comment posted!</p>}
       <p>What are your thoughts?</p>
       <form onSubmit={(event) => handleSubmit(event)}>
-        <input
-          onChange={handlePostRequest}
+        <textarea
+          onChange={handlePostChange}
           id="comment-input"
-          type="text"
           value={commentInput}
           required
         />
-        <button className="comments_submit-button" type="submit">
-          {" "}
-          Post Comment
-        </button>
+        <div id="comments_button-container">
+          <button className="comments_submit-button" type="submit">
+            {" "}
+            Post Comment
+          </button>
+        </div>
       </form>
     </div>
   );
