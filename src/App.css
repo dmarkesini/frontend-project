@@ -9,14 +9,13 @@
 .header {
   text-align: center;
   background-color: rgb(3, 75, 75);
-  height: 150;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   display: block;
   display: grid;
-  grid-template-columns: 10fr 250px;
+  grid-template-columns: 10fr 200px;
   grid-template-areas: "title userinterface";
 }
 
@@ -24,17 +23,14 @@
   padding-left: 30%;
   grid-area: title;
   color: white;
-  /* align-self: center; */
 }
 
 .user-interface {
   border: 3px solid rgb(8, 78, 60);
   background-color: rgb(66, 148, 148);
-
   grid-area: userinterface;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 0.5fr 0.5fr;
   grid-template-areas:
     "avatar username"
     "avatar username";
@@ -46,12 +42,12 @@
   grid-area: username;
   padding-top: 20px;
   font-weight: 400;
+  font-size: 14px;
 }
 
 .avatar {
-  /* border: 3px solid rgb(255, 255, 255); */
   grid-area: avatar;
-  height: 90px;
+  height: 80px;
   padding: 5px;
 }
 
@@ -109,6 +105,7 @@
 
 .nav-link {
   color: rgb(3, 75, 75) !important;
+  font-size: large !important;
 }
 
 .active {
@@ -419,9 +416,10 @@
   }
 
   .username {
-    grid-area: username;
-    padding-top: 20px;
+    padding-top: 40px;
     font-weight: 600;
+    font-size: medium;
+    text-align: center;
   }
 
   .avatar {
