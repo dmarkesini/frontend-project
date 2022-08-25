@@ -1,5 +1,6 @@
 import { fetchCommentsById } from "../api";
 import { useState, useEffect } from "react";
+import PostComment from "./PostComment";
 
 const Comments = ({ article_id }) => {
   const [comments, setComments] = useState([]);
@@ -12,6 +13,7 @@ const Comments = ({ article_id }) => {
 
   return (
     <div>
+      <PostComment article_id={article_id} />
       {comments.map((comment) => {
         return (
           <div key={comment.comment_id}>

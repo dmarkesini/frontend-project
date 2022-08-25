@@ -38,6 +38,11 @@ export const fetchCommentsById = (article_id) => {
 
 export const patchArticleById = (article_id, vote) => {
   return axios
-    .patch(
-      `https://social-interactive-project.herokuapp.com/api/articles/${article_id}`, {inc_votes: vote})
+    .patch(`https://social-interactive-project.herokuapp.com/api/articles/${article_id}`, {inc_votes: vote})
+}
+
+export const postCommentById = (article_id, comment) => {
+  return axios.post(
+    `https://social-interactive-project.herokuapp.com/api/articles/${article_id}/comments`, comment)
+
 }
