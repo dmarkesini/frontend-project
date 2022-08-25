@@ -1,7 +1,7 @@
 const TopicTitle = ({ title }) => {
   return (
-    <div className="articles_header-container">
-      <h1>{title}</h1>
+    <div className="articles_topic-title">
+      <h4>{title}</h4>
     </div>
   );
 };

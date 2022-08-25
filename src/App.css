@@ -47,10 +47,14 @@
   padding: 5px;
 }
 
-.articles_header-container {
+.articles_topic-title {
+  border: 1px solid rgb(72, 155, 155);
+  border-radius: 5px;
+  width: 91%;
+  margin: auto;
   text-align: center;
   text-transform: capitalize;
-  background-color: rgb(21, 102, 102);
+  background-color: rgb(72, 155, 155);
   padding: 5px;
   color: white;
 }
@@ -101,6 +105,25 @@
   width: 100%;
 }
 /* -------LOADING--------- */
+
+/* ---------NAVBAR---------- */
+
+.nav-link {
+  color: rgb(3, 75, 75) !important;
+}
+
+.active {
+  background-color: rgb(3, 75, 75) !important;
+  color: white !important;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  background-color: rgb(3, 75, 75) !important;
+  color: white !important;
+}
+
+/* ---------NAVBAR---------- */
 
 .articles_article-display {
   padding: 25px;
@@ -359,6 +382,11 @@
 
   .topic-4 {
     padding-right: 175px;
+  }
+
+  .articles_topic-title {
+    width: 48%;
+    padding: 5px;
   }
 
   .articles_article-display {

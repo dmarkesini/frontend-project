@@ -18,7 +18,12 @@ function Topics({ handleOrder, handleSortBy }) {
     <Nav
       variant="pills"
       activeKey={selectedTopic}
-      style={{ justifyContent: "center", marginTop: "20px" }}
+      style={{
+        justifyContent: "center",
+        marginTop: "20px",
+        marginBottom: "20px",
+        
+      }}
     >
       <Nav.Item>
         <Nav.Link eventKey="1" href="/">
