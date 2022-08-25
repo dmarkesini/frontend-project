@@ -67,11 +67,15 @@
 
 /* -------LOADING--------- */
 .loading {
-  max-width: 50%;
+  width: 100%;
   line-height: 1.4;
   font-size: 1.2rem;
   font-weight: bold;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20%;
 }
 
 .loadWords {
