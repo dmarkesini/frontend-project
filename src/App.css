@@ -47,10 +47,14 @@
   padding: 5px;
 }
 
-.articles_header-container {
+.articles_topic-title {
+  border: 1px solid rgb(72, 155, 155);
+  border-radius: 5px;
+  width: 91%;
+  margin: auto;
   text-align: center;
   text-transform: capitalize;
-  background-color: rgb(21, 102, 102);
+  background-color: rgb(72, 155, 155);
   padding: 5px;
   color: white;
 }
@@ -102,6 +106,27 @@
 }
 /* -------LOADING--------- */
 
+/* ---------NAVBAR---------- */
+
+.nav-link {
+  color: rgb(3, 75, 75) !important;
+}
+
+.active {
+  background-color: rgb(3, 75, 75) !important;
+  color: white !important;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  background-color: rgb(3, 75, 75) !important;
+  color: white !important;
+}
+
+/* ---------NAVBAR---------- */
+
+/* --------article display on homepage---------- */
+
 .articles_article-display {
   padding: 25px;
 }
@@ -117,7 +142,6 @@
   margin: 7px;
   box-shadow: 5px 5px 5px lightblue;
   cursor: pointer;
-  /* box-shadow: 0 0 0 1px rgb(0 0 0 / 20%); */
   transition: all 200ms ease-out;
   display: flex;
   flex-direction: column;
@@ -134,11 +158,11 @@
   padding-left: 50px;
 }
 
+/* --------article display on homepage---------- */
+
+/* --------single page article display in each topic---------- */
+
 .articles_single-page-article-container {
-  /* grid-area: article;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-areas: "article"; */
   border: solid 1px rgb(133, 199, 193);
   border-radius: 5px;
   box-shadow: 5px 5px 5px lightblue;
@@ -149,10 +173,13 @@
   background-color: rgb(217, 235, 231);
   width: 75%;
 }
+
 .articles_single-page-article-container:hover {
   box-shadow: 0 0 6px rgb(35 173 255);
   transition: all 200ms ease-out;
 }
+
+/* -----comments--------- */
 
 .articles_single-page-comments-section {
   border: solid 1px rgb(133, 199, 193);
@@ -205,10 +232,13 @@
   transition: all 200ms ease-out;
 }
 
+/* -----comments--------- */
+
 #single-page_title {
   text-align: center;
   margin: 0;
 }
+
 #single-page_topic {
   font-weight: 700px;
   text-align: center;
@@ -228,6 +258,7 @@
 #single-page_body {
   font-weight: 700px;
   text-align: center;
+  padding: 10px;
 }
 
 #single-page_posted {
@@ -250,12 +281,16 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  padding: 10px;
 }
+
+/* ---------vote buttons----------- */
 
 .articles-container_votes-buttons {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  padding: 5px;
 }
 
 #vote-button {
@@ -264,21 +299,23 @@
   font-weight: 700px;
   text-align: center;
   text-decoration: none;
-  /* border: rgb(87, 3, 3) solid 2px;
-  
-  /* background-color: rgb(255, 80, 10); */
   background-color: rgb(214, 63, 57);
   border: none;
   border-radius: 5px;
-  padding: 4px;
+  padding: 5px;
   color: white;
   box-shadow: 0 0 6px rgb(35 173 255);
   cursor: pointer;
 }
+
 #vote-button:hover {
   opacity: 0.8;
   box-shadow: 0 0 6px rgb(35 173 255);
 }
+
+/* ---------vote buttons----------- */
+
+/* -----topic images---------- */
 
 .topic-image-single-page {
   max-width: 100%;
@@ -288,22 +325,21 @@
 }
 
 .topic-image {
-  margin: auto;
-  max-width: 65%;
+  width: 100%;
 }
 
-.topics-container {
-  border: solid 2px teal;
-  border-radius: 5px;
-  padding: 25px;
-  padding-left: 25px;
-  display: flex;
-  justify-content: space-around;
-}
+/* -----topic images---------- */
+
+/* --------single page article display in each topic - END---------- */
+
+/* ------Media Queries------------- */
 
 @media screen and (min-width: 600px) {
   .articles_single-article {
     flex-direction: row;
+  }
+  .topic-image {
+    width: 50%;
   }
 }
 
@@ -359,6 +395,11 @@
 
   .topic-4 {
     padding-right: 175px;
+  }
+
+  .articles_topic-title {
+    width: 48%;
+    padding: 5px;
   }
 
   .articles_article-display {

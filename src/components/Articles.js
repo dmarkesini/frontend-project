@@ -3,11 +3,11 @@ import { useState, useEffect } from "react";
 import ArticleDisplay from "./ArticleDisplay";
 import TopicTitle from "./TopicTitle";
 
-const Articles = () => {
+const Articles = ({ sortByQuery, orderQuery }) => {
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
-    fetchArticles().then(({ data }) => {
+    fetchArticles(sortByQuery, orderQuery).then(({ data }) => {
       setArticles(data);
     });
   }, [articles]);

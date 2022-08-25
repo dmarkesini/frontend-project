@@ -26,7 +26,10 @@ const ArticleDisplay = ({ article }) => {
         <p className="articles_single-author">Author: {article.author}</p>
         <p className="articles_single-votes">Votes: {article.votes}</p>
         <p className="articles_single-comments">
-          Comments: {article.comment_count}
+          {article.comment_count} Comments
+        </p>
+        <p className="articles_single-comments">
+          posted at {article.created_at.slice(0, 10)}
         </p>
       </div>
     </div>

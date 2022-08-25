@@ -4,13 +4,17 @@ import { fetchArticlesByTopic } from "../api";
 import ArticleDisplay from "./ArticleDisplay";
 import TopicTitle from "./TopicTitle";
 
-const ArticlesByTopic = () => {
+const ArticlesByTopic = ({ sortByQuery, orderQuery }) => {
   const [articlesByTopic, setArticlesByTopic] = useState([]);
 
   const [searchParams] = useSearchParams();
 
   useEffect(() => {
-    fetchArticlesByTopic(searchParams.get("topic")).then(({ data }) => {
+    fetchArticlesByTopic(
+      searchParams.get("topic"),
+      sortByQuery,
+      orderQuery
+    ).then(({ data }) => {
       setArticlesByTopic(data);
     });
   }, [articlesByTopic, searchParams]);
