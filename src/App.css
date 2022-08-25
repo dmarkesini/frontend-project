@@ -50,7 +50,57 @@
 .articles_header-container {
   text-align: center;
   text-transform: capitalize;
+  background-color: rgb(21, 102, 102);
+  padding: 5px;
+  color: white;
 }
+
+/* -----HEADER------- */
+
+/* -------LOADING--------- */
+.loading {
+  max-width: 50%;
+  line-height: 1.4;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.loadWords {
+  font-weight: normal;
+  font-size: 0.9rem;
+  color: rgba(189, 189, 189, 1);
+  margin: 0.6rem 0 2rem 0;
+  display: block;
+}
+
+.loading__anim {
+  width: 35px;
+  height: 35px;
+  border: 5px solid rgba(189, 189, 189, 0.25);
+  border-left-color: rgba(3, 155, 229, 1);
+  border-top-color: rgba(3, 155, 229, 1);
+  border-radius: 50%;
+  display: inline-block;
+  animation: rotate 600ms infinite linear;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.comments_posted-message {
+  color: rgb(255, 94, 0);
+  font-weight: 600;
+}
+
+#comment-input {
+  height: 150px;
+  width: 100%;
+}
+/* -------LOADING--------- */
 
 .articles_article-display {
   padding: 25px;
@@ -97,7 +147,7 @@
   margin-top: 3%;
   color: #282c34;
   background-color: rgb(217, 235, 231);
-  width: 40%;
+  width: 75%;
 }
 .articles_single-page-article-container:hover {
   box-shadow: 0 0 6px rgb(35 173 255);
@@ -112,7 +162,7 @@
   margin: auto;
   color: #282c34;
   background-color: rgb(237, 243, 242);
-  width: 40%;
+  width: 75%;
   margin-top: 20px;
   margin-bottom: 3%;
 }
@@ -120,6 +170,28 @@
 #comments_author-posted {
   font-size: small;
   font-weight: 700;
+}
+
+#comments_button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.comments_submit-button {
+  font-weight: 700px;
+  text-align: center;
+  text-decoration: none;
+  border: rgb(5, 112, 112) solid 2px;
+  background-color: teal;
+  border-radius: 10px;
+  padding: 4px;
+  color: white;
+  margin: 15px;
+}
+
+.comments_submit-button:hover {
+  opacity: 0.8;
+  box-shadow: 0 0 6px rgb(35 173 255);
 }
 
 #comments_body {
@@ -242,6 +314,14 @@
 }
 
 @media screen and (min-width: 922px) {
+  .articles_single-page-article-container {
+    width: 40%;
+  }
+
+  .articles_single-page-comments-section {
+    width: 40%;
+  }
+
   .header {
     background-color: rgb(3, 75, 75);
     display: grid;
@@ -284,5 +364,9 @@
   .articles_article-display {
     padding: 25px;
     margin: auto;
+  }
+
+  #comment-input {
+    width: 100%;
   }
 }
