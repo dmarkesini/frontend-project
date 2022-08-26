@@ -136,7 +136,7 @@
 }
 
 .articles_single-article {
-  border: solid 1px rgb(70, 36, 36);
+  border: solid 1px rgb(13, 92, 68);
   border-radius: 5px;
   padding: 5px;
   margin: 7px;
@@ -147,15 +147,27 @@
   flex-direction: column;
   margin-left: auto;
   margin-right: auto;
+  position: relative;
 }
 
 .articles_single-article:hover {
-  /* border: solid 2px rgb(135, 230, 236); */
   box-shadow: 0 0 6px rgb(35 173 255);
 }
 
 .articles_text-container {
+  /* margin-top: 55px; */
   padding-left: 50px;
+  padding: 25px;
+}
+
+.articles_single-posted-author {
+  font-size: small;
+}
+
+.articles_single-votes-comments {
+  position: absolute;
+  bottom: 0;
+  right: 5%;
 }
 
 /* --------article display on homepage---------- */

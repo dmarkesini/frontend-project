@@ -26,7 +26,7 @@ const Votes = ({ article }) => {
         <ErrorPage errorMessage={errorMessage} />
       ) : (
         <div className="articles-container_votes-buttons">
-          <p id="single-page_votes">Votes: {article.votes}</p>
+          <p id="single-page_votes">{article.votes} Votes</p>
           <button
             disabled={upVote}
             onClick={() => vote(+1)}

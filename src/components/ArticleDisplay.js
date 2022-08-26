@@ -23,14 +23,14 @@ const ArticleDisplay = ({ article }) => {
       )}
       <div className="articles_text-container">
         <p className="articles_single-title">{article.title}</p>
-        <p className="articles_single-author">Author: {article.author}</p>
-        <p className="articles_single-votes">Votes: {article.votes}</p>
-        <p className="articles_single-comments">
-          {article.comment_count} Comments
+        <p className="articles_single-posted-author">
+          posted at {article.created_at.slice(0, 10)} by {article.author}
         </p>
-        <p className="articles_single-comments">
-          posted at {article.created_at.slice(0, 10)}
-        </p>
+        <div className="articles_single-votes-comments">
+          <p>
+            {article.votes} Votes ● {article.comment_count} Comments
+          </p>
+        </div>
       </div>
     </div>
   );
