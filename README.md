@@ -1,4 +1,3 @@
-
 # Frontend Project
 
 ## Table of Contents
@@ -13,20 +12,21 @@
 ## About
 
 This is a front-end project built with React.JS, and it is a social/news web application that enables the user to perform several actions such as:
+
 - scrolling through articles
 - explore articles sorted by topic
-- posting and deleting a comment 
+- posting and deleting a comment
 - voting on their favourite posts
 - sorting articles by date, votes and by order (ascending / descending)
 
-```
-The React application was built with user-friendly experience on mind, such as optimistic rendering which updates the state optimistically. This provides feedback to the user when they have voted or posted a comment.
-```
-```
+
+The React application was built with mobile-first approach and has a responsive design. It was also built with considerations of the user-friendly experience, such as optimistic rendering which updates the state optimistically. This provides feedback to the user when they have voted or posted a comment.
+
+
 Further, error handling was implemented in the back-end project for this React application which supplies the front-end with error messages.
 
 Error handling was also supplemented for all API requests with React.JS and the app produces error messages appropriately for wrong requests or wrong endpoints.
-```
+
 
 **Hosted version:** https://social-news-project.netlify.app/
 
@@ -46,7 +46,7 @@ The following tools and libraries were used
 
 To run the project locally you need to clone the repository and then run the following commands on the terminal.
 
-NOTE: The minimum version of **Node.JS** to run the project is v6.9. **React.JS** v18.0 was also utilised.  
+NOTE: The minimum version of **Node.JS** to run the project is v6.9. **React.JS** v18.0 was also utilised.
 
 1. First, please fork the project from this link https://github.com/dmarkesini/frontend-project-nc-news
 
@@ -62,7 +62,7 @@ git clone <project_name_here>
 cd Backend-project
 ```
 
-4. Install the dependencies 
+4. Install the dependencies
 
 ```sh
 npm install
