@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const fetchArticles = (sortByQuery, orderQuery = "DESC") => {
-  let endpoint = `https://social-interactive-project.herokuapp.com/api/articles`;
+  let endpoint = `https://news-interactive.onrender.com/api/articles`;
 
   if (sortByQuery) {
     endpoint += `?sort_by=${sortByQuery}&order=${orderQuery}`;
@@ -14,18 +14,18 @@ export const fetchArticles = (sortByQuery, orderQuery = "DESC") => {
 
 export const fetchUsers = () => {
   return axios
-    .get("https://social-interactive-project.herokuapp.com/api/users")
+    .get("https://news-interactive.onrender.com/api/users")
     .then((body) => body);
 };
 
 export const fetchTopics = () => {
   return axios
-    .get("https://social-interactive-project.herokuapp.com/api/topics")
+    .get("https://news-interactive.onrender.com/api/topics")
     .then((body) => body);
 };
 
 export const fetchArticlesByTopic = (topic, sortByQuery, orderQuery = "DESC") => {
-  let endpoint = `https://social-interactive-project.herokuapp.com/api/articles?topic=${topic}`;
+  let endpoint = `https://news-interactive.onrender.com/api/articles?topic=${topic}`;
 
   if (sortByQuery) {
     endpoint += `&sort_by=${sortByQuery}&order=${orderQuery}`;
@@ -36,31 +36,31 @@ export const fetchArticlesByTopic = (topic, sortByQuery, orderQuery = "DESC") =>
 
 export const fetchArticleById = (article_id) => {
   return axios
-    .get(`https://social-interactive-project.herokuapp.com/api/articles/${article_id}`)
+    .get(`https://news-interactive.onrender.com/api/articles/${article_id}`)
     .then((body) => body);
 };
 
 export const fetchCommentsById = (article_id) => {
   return axios
-    .get(`https://social-interactive-project.herokuapp.com/api/articles/${article_id}/comments`)
+    .get(`https://news-interactive.onrender.com/api/articles/${article_id}/comments`)
     .then((body) => body);
 };
 
 export const patchArticleById = (article_id, vote) => {
   return axios
-    .patch(`https://social-interactive-project.herokuapp.com/api/articles/${article_id}`,{ inc_votes: vote });
+    .patch(`https://news-interactive.onrender.com/api/articles/${article_id}`,{ inc_votes: vote });
 };
 
 
 export const postCommentById = (article_id, comment) => {
   return axios
     .post(
-    `https://social-interactive-project.herokuapp.com/api/articles/${article_id}/comments`, comment)
+    `https://news-interactive.onrender.com/api/articles/${article_id}/comments`, comment)
 
 }
 
 export const deleteCommentById = (comment_id) => {
   return axios
     .delete(
-    `https://social-interactive-project.herokuapp.com/api/comments/${comment_id}`);
+    `https://news-interactive.onrender.com/api/comments/${comment_id}`);
 }
