@@ -48,7 +48,7 @@ To run the project locally you need to clone the repository and then run the fol
 
 NOTE: The minimum version of **Node.JS** to run the project is v6.9. **React.JS** v18.0 was also utilised.
 
-1. First, please fork the project from this link https://github.com/dmarkesini/frontend-project-nc-news
+1. First, please fork the project from this link https://github.com/dmarkesini/frontend-project
 
 2. To clone the project run this command along with the link of your forked project
 
@@ -59,7 +59,7 @@ git clone <project_name_here>
 3. Then, go into the directory and open the project
 
 ```sh
-cd Backend-project
+cd frontend-project 
 ```
 
 4. Install the dependencies
